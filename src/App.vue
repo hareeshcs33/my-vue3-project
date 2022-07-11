@@ -4,7 +4,11 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/contact">Contact</router-link>
   </nav>
-  <router-view/>
+  <div>
+    <router-link to="/profile/hareesh">Hareesh Profile</router-link> |
+    <router-link to="/profile/nivas">Nivas Profile</router-link>
+  </div>
+  <router-view />
 </template>
 
 <style lang="scss">

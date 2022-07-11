@@ -19,7 +19,12 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: () => import('../views/ContactView.vue')
-  }
+  },
+  {
+    path: '/profile/:name',
+    name: 'profile',
+    component: () => import('../views/Profile-view.vue')
+  },
 ]
 
 const router = createRouter({
