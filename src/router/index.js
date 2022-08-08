@@ -25,6 +25,31 @@ const routes = [
     name: 'profile',
     component: () => import('../views/Profile-view.vue')
   },
+  {
+    path: '/signup',
+    name: 'SignUp',
+    component: () => import('../components/SignUp.vue')
+  },
+  {
+    path: '/login',
+    name: 'LogIn',
+    component: () => import('../components/LogIn.vue')
+  },
+  {
+    path: '/user-details',
+    name: 'UserDetails',
+    component: () => import('../components/UserDetails.vue')
+  },
+  {
+    path: '/add-user',
+    name: 'AddUser',
+    component: () => import('../components/AddUser.vue')
+  },
+  {
+    path: '/update-user/:id',
+    name: 'UpdateUser',
+    component: () => import('../components/UpdateUser.vue')
+  }
 ]
 
 const router = createRouter({
