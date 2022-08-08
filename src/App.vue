@@ -1,6 +1,7 @@
 <template>
   <nav class="nav-list">
     <router-link to="/home">Home</router-link> |
+    <router-link to="/profiles-list">Profile</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/contact">Contact</router-link> |
     <router-link to="/user-details">User Details</router-link> |
