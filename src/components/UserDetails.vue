@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>Users Details</h1>
+        <h1 v-if="userDetailsStatus">Loading...</h1>
         <table class="table">
             <tr>
                 <th>ID</th>
@@ -29,7 +30,8 @@ export default {
     name:'UserDetails',
     data(){
         return {
-            userDetails: []
+            userDetails: [],
+            userDetailsStatus: false
         }
     },
     methods: {
@@ -43,28 +45,15 @@ export default {
     },
     async mounted(){
         // let result = await axios.get("https://jsonplaceholder.typicode.com/users");
+        this.userDetailsStatus = true;
         let result = await axios.get("http://localhost:3000/users");
-        this.userDetails = result.data;
-        localStorage.setItem('user-info',JSON.stringify(result.data))
+        if(result.data) {
+            this.userDetailsStatus = false;
+            this.userDetails = result.data;
+            localStorage.setItem('user-info',JSON.stringify(result.data))
+        }
+        console.log(result)
     }
 }
 </script>
-<style scoped>
-h1 {
-    text-align: center;
-}
-table {
-    border-spacing: 0;
-    border: 1px solid #ccc;
-    margin: 0 auto 40px;
-}
-table tr th {
-    padding: 15px;
-    border-bottom: 2px solid #000;
-}
-table tr td {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    text-align: center;
-}
-</style>
+<style src="../styles/common.css"></style>

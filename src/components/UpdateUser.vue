@@ -47,30 +47,4 @@ export default {
     }
 }
 </script>
-<style scoped>
-h1,
-p {
-  text-align: center;
-}
-.add-user {
-  text-align: center;
-}
-.add-user input {
-  width: 300px;
-  height: 40px;
-  padding-left: 20px;
-  display: block;
-  margin: 0 auto 15px;
-  border: 1px solid skyblue;
-}
-.add-user button {
-  display: block;
-  width: 320px;
-  height: 40px;
-  border: 1px solid skyblue;
-  color: #fff;
-  background: skyblue;
-  margin: auto;
-  cursor: pointer;
-}
-</style>
+<style src="../styles/common.css"></style>

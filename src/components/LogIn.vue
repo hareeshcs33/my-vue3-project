@@ -41,30 +41,4 @@ export default {
   },
 }
 </script>
-<style scoped>
-h1,
-p {
-  text-align: center;
-}
-.register {
-  text-align: center;
-}
-.register input {
-  width: 300px;
-  height: 40px;
-  padding-left: 20px;
-  display: block;
-  margin: 0 auto 15px;
-  border: 1px solid skyblue;
-}
-.register button {
-  display: block;
-  width: 320px;
-  height: 40px;
-  border: 1px solid skyblue;
-  color: #fff;
-  background: skyblue;
-  margin: auto;
-  cursor: pointer;
-}
-</style>
+<style src="../styles/common.css"></style>

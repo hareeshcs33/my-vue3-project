@@ -1,0 +1,63 @@
+
+table {
+    border-spacing: 0;
+    border: 1px solid #ccc;
+    margin: 0 auto 40px;
+}
+table tr th {
+    padding: 15px;
+    border-bottom: 2px solid #000;
+}
+table tr td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.register,
+h1,
+p {
+  text-align: center;
+}
+.add-user {
+  text-align: center;
+}
+.add-user input {
+  width: 300px;
+  height: 40px;
+  padding-left: 20px;
+  display: block;
+  margin: 0 auto 15px;
+  border: 1px solid skyblue;
+}
+.register button,
+.add-user button {
+  display: block;
+  width: 320px;
+  height: 40px;
+  border: 1px solid skyblue;
+  color: #fff;
+  background: skyblue;
+  margin: auto;
+  cursor: pointer;
+}
+
+.register input,
+.add-user input {
+  width: 300px;
+  height: 40px;
+  padding-left: 20px;
+  display: block;
+  margin: 0 auto 15px;
+  border: 1px solid skyblue;
+}
+.add-user button {
+  display: block;
+  width: 320px;
+  height: 40px;
+  border: 1px solid skyblue;
+  color: #fff;
+  background: skyblue;
+  margin: auto;
+  cursor: pointer;
+}
