@@ -25,11 +25,16 @@ export default {
     },
     methods: {
         async addUser(){
-            const result = await axios.post('http://localhost:3000/users',this.userDetail)
-            if(result.status===201){
-                this.$router.push({name:'UserDetails'})
+            try {
+                const result = await axios.post('http://localhost:3000/users',this.userDetail)
+                if(result.status===201){
+                    this.$router.push({name:'UserDetails'})
+                }
+                console.log('result',result) 
+            } catch(e){
+                console.error(e);
             }
-            console.log('result',result)
+            
         }
     }
 }

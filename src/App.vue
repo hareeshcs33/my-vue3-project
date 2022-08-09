@@ -1,31 +1,37 @@
 <template>
   <nav class="nav-list">
-    <router-link to="/home">Home</router-link> |
-    <router-link to="/profiles-list">Profile</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/contact">Contact</router-link> |
-    <router-link to="/user-details">User Details</router-link> |
-    <router-link to="/add-user">Add User</router-link> |
-    <router-link to="/signup">Sign Up</router-link> |
-    <a @click="logout" href="#">LogOut</a>
+      <router-link to="/home">Home</router-link> |
+      <router-link to="/profiles-list">Profile</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/contact">Contact</router-link> |
+      <router-link to="/user-details">User Details</router-link> |
+      <router-link to="/add-user">Add User</router-link> |
+      <router-link to="/signup">Sign Up</router-link> |
+      <router-link to="/login">LogIn</router-link> |
+      <button type="button" @click="logout">LogOut</button>
   </nav>
   <!-- <div>
-    <router-link to="/profile/hareesh">Hareesh Profile</router-link> |
-    <router-link to="/profile/nivas">Nivas Profile</router-link>
+    <router-link to="/profile/john">John Profile</router-link> |
+    <router-link to="/profile/smith">Smith Profile</router-link>
   </div> -->
   <router-view />
 </template>
 <script>
 export default {
-  name: 'App',
+  name: "App",
+  data(){
+    return {
+      isLogin: false
+    }
+  },
   methods: {
     logout() {
+      this.$router.push({ name: "LogIn" });
       localStorage.clear();
-      this.$router.push({name:'LogIn'})
-      console.log('logout')
-    }
-  }
-}
+      console.log("logout");
+    },
+  },
+};
 </script>
 
 <style lang="scss">

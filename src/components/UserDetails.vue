@@ -44,15 +44,20 @@ export default {
             }
         },
         async loadUserData(){
-            // let result = await axios.get("https://jsonplaceholder.typicode.com/users");
-            this.userDetailsStatus = true;
-            let result = await axios.get("http://localhost:3000/users");
-            if(result.data) {
-                this.userDetailsStatus = false;
-                this.userDetails = result.data;
-                localStorage.setItem('user-info',JSON.stringify(result.data))
+            try {
+                // let result = await axios.get("https://jsonplaceholder.typicode.com/users");
+                this.userDetailsStatus = true;
+                let result = await axios.get("http://localhost:3000/users");
+                if(result.data) {
+                    this.userDetailsStatus = false;
+                    this.userDetails = result.data;
+                    localStorage.setItem('user-info',JSON.stringify(result.data))
+                }
+                console.log(result);
+            } catch(e){
+                console.error(e);
             }
-            console.log(result)
+            
         }
     },
     async mounted(){
