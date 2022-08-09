@@ -4,7 +4,7 @@
         <form class="add-user">
             <input type="text" v-model="userDetail.name" placeholder="Enter Name" />
             <input type="text" v-model="userDetail.email" placeholder="Enter Email" />
-            <input type="text" v-model="userDetail.password" placeholder="Enter User Name" />
+            <input type="password" v-model="userDetail.password" placeholder="Enter password" />
             <button type="button" @click="addUser">Add User</button>
         </form>
     </div>

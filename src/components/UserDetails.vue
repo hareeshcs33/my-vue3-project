@@ -15,9 +15,9 @@
                 <td>{{userDetail.name}}</td>
                 <td>{{userDetail.email}}</td>
                 <td>{{userDetail.password}}</td>
-                <td>
+                <td class="action-block">
                     <router-link :to="'/update-user/'+userDetail.id">Update</router-link>
-                    <!-- <button @click="deleteUser">Delete</button> -->
+                    <button @click="deleteUser(userDetail.id)">Delete</button>
                 </td>
             </tr>
         </table>
@@ -35,24 +35,28 @@ export default {
         }
     },
     methods: {
-        // updateUser(){
-        //     // this.$router.push()
-        //     console.log('Update')
-        // },
-        // deleteUser(){
-        //     console.log('Delete')
-        // }
+        async deleteUser(id){
+            console.log('Delete user id',id)
+            const result = await axios.delete(`http://localhost:3000/users/${id}`)
+            console.log(result)
+            if(result.status===200){
+                this.loadUserData();
+            }
+        },
+        async loadUserData(){
+            // let result = await axios.get("https://jsonplaceholder.typicode.com/users");
+            this.userDetailsStatus = true;
+            let result = await axios.get("http://localhost:3000/users");
+            if(result.data) {
+                this.userDetailsStatus = false;
+                this.userDetails = result.data;
+                localStorage.setItem('user-info',JSON.stringify(result.data))
+            }
+            console.log(result)
+        }
     },
     async mounted(){
-        // let result = await axios.get("https://jsonplaceholder.typicode.com/users");
-        this.userDetailsStatus = true;
-        let result = await axios.get("http://localhost:3000/users");
-        if(result.data) {
-            this.userDetailsStatus = false;
-            this.userDetails = result.data;
-            localStorage.setItem('user-info',JSON.stringify(result.data))
-        }
-        console.log(result)
+        this.loadUserData();
     }
 }
 </script>

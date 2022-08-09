@@ -30,15 +30,15 @@
       "id": 2
     },
     {
-      "name": "John Doe",
-      "password": "John_Doe",
-      "email": "John.Doe@gmail.com",
+      "name": "stew",
+      "password": "stew_test",
+      "email": "stew@gmail.com",
       "id": 3
     },
     {
-      "name": "Stew",
-      "email": "Stew@gmail.com",
-      "password": "Stew@123",
+      "name": "john doe",
+      "password": "johnDoe",
+      "email": "john.doe@gmail.com",
       "id": 4
     }
   ]
